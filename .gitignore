@@ -4,16 +4,9 @@
 
 /AspNetCoreSecurity.Cookie/obj
 /AspNetCoreSecurity.Cookie/bin/Debug/net8.0
-*.css
-/AspNetCoreSecurity.Cookie/wwwroot/js/site.js
-/AspNetCoreSecurity.Cookie/wwwroot/lib/bootstrap
 *.user
 /.vs/AspNetCoreSecurityExample/DesignTimeBuild
 /.vs/AspNetCoreSecurityExample/FileContentIndex
 /.vs/AspNetCoreSecurityExample/v17
 /.vs/ProjectEvaluation
-/AspNetCoreSecurity.Cookie/wwwroot/lib/jquery
-/AspNetCoreSecurity.Cookie/wwwroot/lib/jquery-validation
-/AspNetCoreSecurity.Cookie/wwwroot/lib/jquery-validation-unobtrusive
-*.ico
 *.config
