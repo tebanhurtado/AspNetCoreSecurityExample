@@ -4,15 +4,24 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddAuthentication("cookie")
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultScheme = "cookie";
+        options.DefaultChallengeScheme = "oidc";
+    })
     .AddCookie("cookie", options =>
     {
         options.Cookie.Name = "demo";
         options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
         options.LoginPath = "/Account/Login";
         options.AccessDeniedPath = "/Account/AccessDenied";
+    })
+    .AddOpenIdConnect("oidc", options => 
+    {
+        options.Authority = "https://demo.duendesoftware.com";
+        options.ClientId = "login";
     });
-
+    
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Users", policy =>

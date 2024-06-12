@@ -3,10 +3,18 @@
 <div>
 	<h3>User claims</h3>
 	<dl>
-		@foreach (var claim in User.Claims)
+		@foreach (var claim in Model.Session.Claims)
 		{
 			<dt>@claim.Type</dt>
 			<dd>@claim.Value</dd>
 		}
+		<h3>Metadata</h3>
+		<dl>
+			@foreach(var item in Model.Session.Metadata)
+            {
+                <dt>@item.Key</dt>
+                <dd>@item.Value</dd>
+            }
+		</dl>
 	</dl>
 </div>
